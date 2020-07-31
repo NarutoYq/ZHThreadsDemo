@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var test:ThreadTest?
+    private lazy var test:ThreadTest = {
+        return ThreadTest()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.test = ThreadTest()
-        self.test?.run()
     }
 
-
     
+    @IBAction func lockPerformanceAction(_ sender: Any) {
+//        self.test.testLockPerformance()
+        
+        self.test.test_serial_queue()
+    }
     
 
 }

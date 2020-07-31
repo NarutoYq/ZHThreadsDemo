@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 845EEC5A24D27B7200DA79B6 /* OCTest.m */; };
 		845F965524C16FB400987D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965424C16FB400987D4E /* AppDelegate.swift */; };
 		845F965724C16FB400987D4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965624C16FB400987D4E /* SceneDelegate.swift */; };
 		845F965924C16FB400987D4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965824C16FB400987D4E /* ViewController.swift */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		845EEC5924D27B7200DA79B6 /* OCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTest.h; sourceTree = "<group>"; };
+		845EEC5A24D27B7200DA79B6 /* OCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTest.m; sourceTree = "<group>"; };
 		845F965124C16FB400987D4E /* ZHThreadsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHThreadsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845F965424C16FB400987D4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845F965624C16FB400987D4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				84BC15C224C977AC00C808F5 /* test.h */,
 				84BC15C324C977AC00C808F5 /* test.c */,
 				84BC15C124C977AB00C808F5 /* test-Bridging-Header.h */,
+				845EEC5924D27B7200DA79B6 /* OCTest.h */,
+				845EEC5A24D27B7200DA79B6 /* OCTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BC15C424C977AC00C808F5 /* test.c in Sources */,
+				845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */,
 				845F965924C16FB400987D4E /* ViewController.swift in Sources */,
 				845F966924C16FFA00987D4E /* ThreadTest.swift in Sources */,
 				845F965524C16FB400987D4E /* AppDelegate.swift in Sources */,
@@ -301,6 +307,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

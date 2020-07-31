@@ -10,17 +10,16 @@
 #include <pthread.h>
 #include <unistd.h>
 
+//MARK: - pthread
 pthread_t thread;
-
 void start(void *param) {
     printf("1\n");
     sleep(5);
     printf("2");
     pthread_exit(&thread);
 }
-
 int test(void) {
-    pthread_create(&thread, NULL, start, NULL);
-    pthread_detach(thread);
+//    pthread_create(&thread, NULL, start, NULL);
+//    pthread_detach(thread);
     return 0;
 }
