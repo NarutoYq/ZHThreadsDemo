@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84108E7925873BEA00FC59CE /* ZHSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84108E7825873BEA00FC59CE /* ZHSortTest.m */; };
+		8415E96B2583374A00B4396D /* ZHMutableArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */; };
 		845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 845EEC5A24D27B7200DA79B6 /* OCTest.m */; };
 		845F965524C16FB400987D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965424C16FB400987D4E /* AppDelegate.swift */; };
 		845F965724C16FB400987D4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965624C16FB400987D4E /* SceneDelegate.swift */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84108E7725873BEA00FC59CE /* ZHSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSortTest.h; sourceTree = "<group>"; };
+		84108E7825873BEA00FC59CE /* ZHSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSortTest.m; sourceTree = "<group>"; };
+		8415E9692583374A00B4396D /* ZHMutableArrayTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHMutableArrayTest.h; sourceTree = "<group>"; };
+		8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHMutableArrayTest.m; sourceTree = "<group>"; };
 		845EEC5924D27B7200DA79B6 /* OCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTest.h; sourceTree = "<group>"; };
 		845EEC5A24D27B7200DA79B6 /* OCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTest.m; sourceTree = "<group>"; };
 		845F965124C16FB400987D4E /* ZHThreadsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHThreadsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,10 @@
 				84BC15C124C977AB00C808F5 /* test-Bridging-Header.h */,
 				845EEC5924D27B7200DA79B6 /* OCTest.h */,
 				845EEC5A24D27B7200DA79B6 /* OCTest.m */,
+				8415E9692583374A00B4396D /* ZHMutableArrayTest.h */,
+				8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */,
+				84108E7725873BEA00FC59CE /* ZHSortTest.h */,
+				84108E7825873BEA00FC59CE /* ZHSortTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -155,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BC15C424C977AC00C808F5 /* test.c in Sources */,
+				84108E7925873BEA00FC59CE /* ZHSortTest.m in Sources */,
 				845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */,
 				845F965924C16FB400987D4E /* ViewController.swift in Sources */,
+				8415E96B2583374A00B4396D /* ZHMutableArrayTest.m in Sources */,
 				845F966924C16FFA00987D4E /* ThreadTest.swift in Sources */,
 				845F965524C16FB400987D4E /* AppDelegate.swift in Sources */,
 				845F965724C16FB400987D4E /* SceneDelegate.swift in Sources */,
@@ -306,6 +318,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,6 +341,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

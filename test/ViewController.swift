@@ -10,21 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private lazy var test:ThreadTest = {
-        return ThreadTest()
-    }()
+    private lazy var test:ThreadTest = ThreadTest()
+    private lazy var octest:OCTest = OCTest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    
+    static var timer:Timer?
     @IBAction func lockPerformanceAction(_ sender: Any) {
-//        self.test.testLockPerformance()
-        
-        self.test.test_serial_queue()
+        self.octest.test()
+//        ZHMutableArrayTest.testCircle()
+        sortTest()
     }
-    
 
 }
+
+
 

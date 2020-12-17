@@ -3,3 +3,6 @@
 //
 
 #include "test.h"
+#import "OCTest.h"
+#import "ZHMutableArrayTest.h"
+#import "ZHSortTest.h"
