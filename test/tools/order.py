@@ -16,7 +16,8 @@ def clean_logistics(value):
     for keyword in logistics_keywords:
         if keyword in value:
             value = value.replace(keyword,'')
-            break
+    if ':' in value:
+        print("未识别的物流公司："+value)
     return value
 
 #清洗订单货品数据
