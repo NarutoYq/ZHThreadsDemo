@@ -15,7 +15,7 @@
 
 @implementation ZHSortTest
 
-
+//MARK: - 快排
 /// 快排
 void quickSort(int* array, int length, int left, int right) {
     if (left >= right)  return;
@@ -58,6 +58,7 @@ void quickSort(int* array, int length, int left, int right) {
     }
 }
 
+//MARK: - 计数排序
 /// 计数排序
 void countSort(int* array, int length) {
     if (length<=1) return ;
@@ -95,7 +96,6 @@ void countSort(int* array, int length) {
     }
     free(newArray);
 }
-
 
 //MARK: - 堆排序
 /// 从 parentIndex 节点开始，调整二叉树，成为大(小)顶堆。
@@ -149,16 +149,82 @@ void heapSort(int* array, int length) {
     }
 }
 
+//MARK: - top k
+/// 分治法分割两数组，返回基准值 pivot index
+int partion(int* array, int length, int left, int right) {
+    if (left >= right) return left;
+    // 挑选基准值
+    int i = left;
+    int j = right;
+    int pivot = array[left];
+    while (true) {
+        //从后往前找小于 pivot 的元素
+        while (j > i && array[j]>= pivot) j--;
+        // i、j相遇
+        if (i>=j) break;
+        //从前往后找大于 pivot 的元素
+        while (i < j && array[i]<= pivot) i++;
+        // i、j相遇
+        if (i>=j) break;
+        // 交换 i j
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+    // 更新 pivot 位置
+    array[left] = array[i];
+    array[i] = pivot;
+    return i;
+}
+/// 获取top k大的数
+int topK(int* array, int length, int top) {
+    int top_index = length-top;
+    if (top_index<0 || top_index>=length) return -1;
+    int topK_value = -1;
+    int left = 0;
+    int right = length - 1;
+    while (true) {
+        //获取 pivot 基准值的索引
+        int pivot_index = partion(array, length, left, right);
+        if (top_index == pivot_index) {
+            //刚好是第 top 大元素
+            topK_value = array[pivot_index];
+            break;
+        }
+        else if (top_index < pivot_index) {
+            //在 pivot 左侧，继续在左区间查找
+            right = pivot_index - 1;
+        }
+        else {
+            //在 pivot 右侧，继续在右区间查找
+            left = pivot_index + 1;
+        }
+    }
+    return topK_value;
+}
 
+
+//MARK: - test
 /// 排序测试
 void sortTest() {
     int a[10] = {8,8,6,1,4,6,7,12,22,5};
 //    quickSort(a, 10, 0, 10-1);
 //    countSort(a, 10);
-    heapSort(a, 10);
+//    heapSort(a, 10);
     printf("\r\n");
-    for (int i=0; i<10; i++) {
-        printf("%d,",a[i]);
-    }
+//    for (int i=0; i<10; i++) {
+//        printf("%d,",a[i]);
+//    }
+    printf("%d\r\n", topK(a, 10, 1));
+    printf("%d\r\n", topK(a, 10, 2));
+    printf("%d\r\n", topK(a, 10, 3));
+    printf("%d\r\n", topK(a, 10, 4));
+    printf("%d\r\n", topK(a, 10, 5));
+    printf("%d\r\n", topK(a, 10, 6));
+    printf("%d\r\n", topK(a, 10, 7));
+    printf("%d\r\n", topK(a, 10, 8));
+    printf("%d\r\n", topK(a, 10, 9));
+    printf("%d\r\n", topK(a, 10, 10));
+    
 }
 @end

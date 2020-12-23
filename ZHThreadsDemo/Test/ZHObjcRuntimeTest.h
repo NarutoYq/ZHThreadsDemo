@@ -1,16 +1,16 @@
 //
-//  OCTest.h
+//  ZHObjcRuntimeTest.h
 //  ZHThreadsDemo
 //
-//  Created by YeQing on 2020/7/30.
+//  Created by YeQing on 2020/12/23.
 //  Copyright © 2020 mengdong. All rights reserved.
-//
+//  objc 运行时 测试
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OCTest : NSObject
+@interface ZHObjcRuntimeTest : NSObject
 - (void)test;
 @end
 

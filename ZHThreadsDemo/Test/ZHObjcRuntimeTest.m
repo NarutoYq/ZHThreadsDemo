@@ -1,12 +1,12 @@
 //
-//  OCTest.m
+//  ZHObjcRuntimeTest.m
 //  ZHThreadsDemo
 //
-//  Created by YeQing on 2020/7/30.
+//  Created by YeQing on 2020/12/23.
 //  Copyright © 2020 mengdong. All rights reserved.
 //
 
-#import "OCTest.h"
+#import "ZHObjcRuntimeTest.h"
 #import <objc/runtime.h>
 
 
@@ -44,11 +44,11 @@ static NSString *nickname = @"";
 
 extern void _objc_autoreleasePoolPrint(void);
 
-@interface OCTest()
+@interface ZHObjcRuntimeTest()
 @property (nonatomic, strong) NSString *name;
 @end
 
-@implementation OCTest
+@implementation ZHObjcRuntimeTest
 + (void)load {
 //    //方案1：交换
 //    exchangeMethod([NSObject class], @selector(description), @selector(hook_description));
@@ -56,6 +56,9 @@ extern void _objc_autoreleasePoolPrint(void);
 //    IMP *old_description_ = &(old_description);
 //    replaceMethod([NSObject class], @selector(description), [self class], @selector(hook_description), old_description_);
 //
+}
+- (void)dealloc {
+    
 }
 ///打印变量
 - (void)printIvars:(NSObject *)obj {

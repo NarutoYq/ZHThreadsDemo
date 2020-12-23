@@ -3,6 +3,6 @@
 //
 
 #include "test.h"
-#import "OCTest.h"
 #import "ZHMutableArrayTest.h"
+#import "ZHObjcRuntimeTest.h"
 #import "ZHSortTest.h"

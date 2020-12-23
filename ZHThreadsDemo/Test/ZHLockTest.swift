@@ -1,25 +1,18 @@
 //
-//  ThreadTest.swift
-//  test
+//  ZHLockTest.swift
+//  ZHThreadsDemo
 //
-//  Created by YeQing on 2020/7/17.
-//  Copyright © 2020 laoqingcai. All rights reserved.
-//
+//  Created by YeQing on 2020/12/23.
+//  Copyright © 2020 mengdong. All rights reserved.
+//  lock  test
 
 import Foundation
 
-public class ThreadTest: NSObject {
+public class ZHLockTest {
+    
     //MARK: - property
-    private var timer = Timer(timeInterval: 1, repeats: true) { (timer) in
-        NSLog("a");
-    }
-    private var pthread:pthread_t?
-    private var thread1:Thread?
     private lazy var serialQueue:DispatchQueue = {
-        return DispatchQueue(label: "queue1", qos: .default, attributes: DispatchQueue.Attributes.init(rawValue: 0), autoreleaseFrequency: .inherit, target: nil)
-    }()
-    private lazy var concurrentQueue:DispatchQueue = {
-        return DispatchQueue(label: "queue2", qos: .default, attributes: .concurrent, autoreleaseFrequency: .inherit, target: nil)
+        return DispatchQueue(label: "test.serial.queue", qos: .default, attributes: DispatchQueue.Attributes.init(rawValue: 0), autoreleaseFrequency: .inherit, target: nil)
     }()
     private var unfairlock:os_unfair_lock_t?
     private var semaphore:DispatchSemaphore?
@@ -30,159 +23,6 @@ public class ThreadTest: NSObject {
     private var recursiveLock:NSRecursiveLock?
     private var rwlock:pthread_rwlock_t?
     
-    //MARK: - thread action
-    @objc func test1() {
-        NSLog("1");
-        RunLoop.current.add(self.timer, forMode: .common)
-//        RunLoop.current.add(NSMachPort(), forMode: .common)
-        RunLoop.current.run()
-        self.timer.fire()
-    }
-    @objc func test2() {
-        NSLog("2");
-    }
-
-//        //MARK: - thread
-//    public func run() {
-//        self.thread1 = Thread(target: self, selector: #selector(test1), object: nil)
-//        self.thread1?.start()
-//        self.perform(#selector(test2), on: self.thread1!, with: nil, waitUntilDone: true);
-//    }
-    
-        //MARK: - serial
-//    public func run() {
-//        for i in 1...1000 {
-//            self.serialQueue?.sync {
-//                sleep(2)
-//                NSLog(Thread.current);
-//            }
-//            NSLog(i);
-//        }
-//     }
-        
-        //MARK: - concurrent
-//    public func run() {
-////        for i in 1...1000 {
-////            DispatchQueue.global(qos: .default).async {
-////                sleep(2)
-////                NSLog(Thread.current);
-////            }
-////            NSLog(i);
-////        }
-//        NSLog("0")
-//        DispatchQueue.global(qos: .default).async {
-//            NSLog("001")
-//        }
-//        DispatchQueue.global(qos: .default).async {
-//            for i in 1...10000000 {
-//                var a:Int = 0;
-//                a = a+1
-//            }
-////            Thread.sleep(until: Date().addingTimeInterval(10))
-//            NSLog("1 "+Thread.current.description)
-//        }
-//        NSLog("00")
-////        DispatchQueue.global(qos: .default).async {
-////            sleep(2);
-////            NSLog("1 "+Thread.current.description)
-////        }
-////        DispatchQueue.global(qos: .default).async(flags: .barrier, execute: { ()  in
-////            sleep(2);
-////            NSLog("2 "+Thread.current.description)
-////        })
-////        NSLog("21 ")
-//////        DispatchQueue.global(qos: .default).sync(group: nil, qos: .default, flags: .barrier, execute: {
-//////            sleep(2);
-//////            NSLog("2 "+Thread.current.description);
-//////        })
-////        DispatchQueue.global(qos: .default).async {
-////            NSLog("3 "+Thread.current.description)
-////        }
-//}
-        
-        //MARK: - dispatch_async_apply
-//    public func run() {
-//        NSLog("start")
-//        DispatchQueue.concurrentPerform(iterations: 10) { (index) in
-//            sleep(2)
-//            NSLog(index)
-//        }
-//        NSLog("end")
-//}
-        
-        //MARK: - DispatchGroup
-//    public func run() {
-//        NSLog("start")
-//        let group = DispatchGroup()
-//        group.enter()
-//        DispatchQueue.global(qos: .default).async {
-//            sleep(3)
-//            NSLog("1")
-//            group.leave()
-//        }
-//        group.enter()
-//        DispatchQueue.global(qos: .default).async {
-//            sleep(3)
-//            NSLog("2")
-//            group.leave()
-//        }
-//        group.notify(queue: DispatchQueue.global(qos: .default)!) {
-//            NSLog("3")
-//        }
-//        NSLog("end")
-//}
-        
-        //MARK: - DispatchSemaphore
-//    public func run() {
-//        NSLog("start")
-//        self.serialQueue?.async {
-//            let semaphore = DispatchSemaphore(value: 1);
-//            var i:Int = 100;
-//            for _ in 1...10 {
-//                semaphore.wait()
-//                DispatchQueue.global(qos: .default).async {
-//                    sleep(5)
-//                    NSLog("1:\(i)"+Thread.current.description);
-//                    i = i-1
-//                    NSLog("2:\(i)"+Thread.current.description);
-//                    semaphore.signal()
-//                }
-//            }
-//            DispatchQueue.global(qos: .default).async(flags: .barrier, execute: { ()  in
-//                NSLog("end:\(i)")
-//            })
-//        }
-//        NSLog("end1")
-//}
-        
-        //MARK: - Operation
-//    public func run() {
-//        NSLog("start")
-//        let opq = OperationQueue()
-//        opq.maxConcurrentOperationCount = 1;
-//        let op = BlockOperation {
-//            sleep(5)
-//            NSLog("1:"+Thread.current.description);
-//        }
-//        op.addExecutionBlock {
-//            sleep(5)
-//            NSLog("2:"+Thread.current.description);
-//        }
-//        op.addExecutionBlock {
-//            sleep(5)
-//            NSLog("3:"+Thread.current.description);
-//        }
-//        op.start()
-//        NSLog("end1")
-//}
-        
-        //MARK: - pthread
-//    public func run() {
-//        NSLog("start")
-//        test()
-//        NSLog("end")
-//}
-        
     //MARK: - OSSpinLock
     private var spinlock:OSSpinLock?
     public func test_spinlock() {
@@ -257,7 +97,7 @@ public class ThreadTest: NSObject {
         }
         NSLog("end")
     }
-    
+
     //MARK: - serial queue
     public func test_serial_queue() {
         NSLog("start")
@@ -367,13 +207,13 @@ public class ThreadTest: NSObject {
             sleep(3)
             self.i += 1
             self.condition?.signal()
-//            self.condition?.broadcast()
+    //            self.condition?.broadcast()
             NSLog("3:"+Thread.current.description);
             self.condition?.unlock()
         }
         NSLog("end")
     }
-    
+
     //MARK: - NSConditionLock
     public func test_conditionlock() {
         NSLog("start")
@@ -400,7 +240,7 @@ public class ThreadTest: NSObject {
         }
         NSLog("end")
     }
-    
+
     //MARK: - NSRecursiveLock
     public func test_recursivelock() {
         NSLog("start")
@@ -421,7 +261,7 @@ public class ThreadTest: NSObject {
         }
         NSLog("end")
     }
-    
+
     //MARK: - objc_sync
     var syncObj:NSObject = NSObject()
     public func test_object_sync() {
@@ -441,7 +281,7 @@ public class ThreadTest: NSObject {
         }
         NSLog("end")
     }
-    
+
     //MARK: - pthread_rwlock_t
     public func test_pthread_rwlock() {
         NSLog("start")
@@ -487,7 +327,8 @@ public class ThreadTest: NSObject {
     }
     
     //MARK: - 锁性能对比
-    public func testLockPerformance() {
+    /// 性能测试
+    public func testPerformance() {
         let looppCount:Int = 100000
         var begin:TimeInterval = 0
         var end:TimeInterval = 0
@@ -584,6 +425,15 @@ public class ThreadTest: NSObject {
         }
         end = CFAbsoluteTimeGetCurrent()
         NSLog("pthread_rwlock_t:\((end-begin)*1000)")
+        //dispatch sync
+        begin = CFAbsoluteTimeGetCurrent()
+        let serialQueue = DispatchQueue(label: "test")
+        for _ in 1...looppCount {
+            serialQueue.sync {
+                
+            }
+        }
+        end = CFAbsoluteTimeGetCurrent()
+        NSLog("serial queue sync:\((end-begin)*1000)")
     }
 }
-

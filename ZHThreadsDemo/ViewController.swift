@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private lazy var test:ThreadTest = ThreadTest()
-    private lazy var octest:OCTest = OCTest()
+    private lazy var test:ZHThreadTest = ZHThreadTest()
+    private lazy var runtimeTest:ZHObjcRuntimeTest = ZHObjcRuntimeTest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +19,11 @@ class ViewController: UIViewController {
 
     static var timer:Timer?
     @IBAction func lockPerformanceAction(_ sender: Any) {
-        self.octest.test()
+//        runtimeTest.test()
 //        ZHMutableArrayTest.testCircle()
-        sortTest()
+//        sortTest()
+        let lockTest = ZHLockTest()
+        lockTest.testPerformance()
     }
 
 }

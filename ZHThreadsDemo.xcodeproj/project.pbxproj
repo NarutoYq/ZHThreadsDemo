@@ -7,26 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84108E7925873BEA00FC59CE /* ZHSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84108E7825873BEA00FC59CE /* ZHSortTest.m */; };
-		8415E96B2583374A00B4396D /* ZHMutableArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */; };
-		845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 845EEC5A24D27B7200DA79B6 /* OCTest.m */; };
+		843CBC76259320FF00E52899 /* ZHSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBC75259320FF00E52899 /* ZHSortTest.m */; };
+		843CBC7A259321E400E52899 /* ZHMutableArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBC79259321E400E52899 /* ZHMutableArrayTest.m */; };
 		845F965524C16FB400987D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965424C16FB400987D4E /* AppDelegate.swift */; };
 		845F965724C16FB400987D4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965624C16FB400987D4E /* SceneDelegate.swift */; };
 		845F965924C16FB400987D4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965824C16FB400987D4E /* ViewController.swift */; };
 		845F965C24C16FB400987D4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845F965A24C16FB400987D4E /* Main.storyboard */; };
 		845F965E24C16FB900987D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845F965D24C16FB900987D4E /* Assets.xcassets */; };
 		845F966124C16FB900987D4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845F965F24C16FB900987D4E /* LaunchScreen.storyboard */; };
-		845F966924C16FFA00987D4E /* ThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F966824C16FFA00987D4E /* ThreadTest.swift */; };
-		84BC15C424C977AC00C808F5 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 84BC15C324C977AC00C808F5 /* test.c */; };
+		848D47032593152400E03DE2 /* ZHLockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D47022593152400E03DE2 /* ZHLockTest.swift */; };
+		848D471625931F7700E03DE2 /* ZHThreadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D471525931F7700E03DE2 /* ZHThreadTest.swift */; };
+		848D471B2593201B00E03DE2 /* ZHObjcRuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D471A2593201B00E03DE2 /* ZHObjcRuntimeTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84108E7725873BEA00FC59CE /* ZHSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSortTest.h; sourceTree = "<group>"; };
-		84108E7825873BEA00FC59CE /* ZHSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSortTest.m; sourceTree = "<group>"; };
-		8415E9692583374A00B4396D /* ZHMutableArrayTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHMutableArrayTest.h; sourceTree = "<group>"; };
-		8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHMutableArrayTest.m; sourceTree = "<group>"; };
-		845EEC5924D27B7200DA79B6 /* OCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTest.h; sourceTree = "<group>"; };
-		845EEC5A24D27B7200DA79B6 /* OCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTest.m; sourceTree = "<group>"; };
+		843CBC74259320FF00E52899 /* ZHSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSortTest.h; sourceTree = "<group>"; };
+		843CBC75259320FF00E52899 /* ZHSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSortTest.m; sourceTree = "<group>"; };
+		843CBC78259321E400E52899 /* ZHMutableArrayTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHMutableArrayTest.h; sourceTree = "<group>"; };
+		843CBC79259321E400E52899 /* ZHMutableArrayTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHMutableArrayTest.m; sourceTree = "<group>"; };
 		845F965124C16FB400987D4E /* ZHThreadsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHThreadsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845F965424C16FB400987D4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845F965624C16FB400987D4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,10 +33,13 @@
 		845F965D24C16FB900987D4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F966024C16FB900987D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845F966224C16FB900987D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		845F966824C16FFA00987D4E /* ThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTest.swift; sourceTree = "<group>"; };
+		848D46FA2592E73200E03DE2 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		848D46FF2592E73200E03DE2 /* test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		848D47022593152400E03DE2 /* ZHLockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHLockTest.swift; sourceTree = "<group>"; };
+		848D471525931F7700E03DE2 /* ZHThreadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHThreadTest.swift; sourceTree = "<group>"; };
+		848D47192593201B00E03DE2 /* ZHObjcRuntimeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHObjcRuntimeTest.h; sourceTree = "<group>"; };
+		848D471A2593201B00E03DE2 /* ZHObjcRuntimeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHObjcRuntimeTest.m; sourceTree = "<group>"; };
 		84BC15C124C977AB00C808F5 /* test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Bridging-Header.h"; sourceTree = "<group>"; };
-		84BC15C224C977AC00C808F5 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		84BC15C324C977AC00C808F5 /* test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +56,7 @@
 		845F964824C16FB400987D4E = {
 			isa = PBXGroup;
 			children = (
-				845F965324C16FB400987D4E /* test */,
+				845F965324C16FB400987D4E /* ZHThreadsDemo */,
 				845F965224C16FB400987D4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,28 +69,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		845F965324C16FB400987D4E /* test */ = {
+		845F965324C16FB400987D4E /* ZHThreadsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				848D46F72592E73200E03DE2 /* Test */,
 				845F965424C16FB400987D4E /* AppDelegate.swift */,
 				845F965624C16FB400987D4E /* SceneDelegate.swift */,
-				845F966824C16FFA00987D4E /* ThreadTest.swift */,
 				845F965824C16FB400987D4E /* ViewController.swift */,
 				845F965A24C16FB400987D4E /* Main.storyboard */,
 				845F965D24C16FB900987D4E /* Assets.xcassets */,
 				845F965F24C16FB900987D4E /* LaunchScreen.storyboard */,
 				845F966224C16FB900987D4E /* Info.plist */,
-				84BC15C224C977AC00C808F5 /* test.h */,
-				84BC15C324C977AC00C808F5 /* test.c */,
 				84BC15C124C977AB00C808F5 /* test-Bridging-Header.h */,
-				845EEC5924D27B7200DA79B6 /* OCTest.h */,
-				845EEC5A24D27B7200DA79B6 /* OCTest.m */,
-				8415E9692583374A00B4396D /* ZHMutableArrayTest.h */,
-				8415E96A2583374A00B4396D /* ZHMutableArrayTest.m */,
-				84108E7725873BEA00FC59CE /* ZHSortTest.h */,
-				84108E7825873BEA00FC59CE /* ZHSortTest.m */,
 			);
-			path = test;
+			path = ZHThreadsDemo;
+			sourceTree = "<group>";
+		};
+		848D46F72592E73200E03DE2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				848D46FF2592E73200E03DE2 /* test.c */,
+				848D46FA2592E73200E03DE2 /* test.h */,
+				848D47022593152400E03DE2 /* ZHLockTest.swift */,
+				848D471525931F7700E03DE2 /* ZHThreadTest.swift */,
+				843CBC74259320FF00E52899 /* ZHSortTest.h */,
+				843CBC75259320FF00E52899 /* ZHSortTest.m */,
+				848D47192593201B00E03DE2 /* ZHObjcRuntimeTest.h */,
+				848D471A2593201B00E03DE2 /* ZHObjcRuntimeTest.m */,
+				843CBC78259321E400E52899 /* ZHMutableArrayTest.h */,
+				843CBC79259321E400E52899 /* ZHMutableArrayTest.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,13 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BC15C424C977AC00C808F5 /* test.c in Sources */,
-				84108E7925873BEA00FC59CE /* ZHSortTest.m in Sources */,
-				845EEC5B24D27B7200DA79B6 /* OCTest.m in Sources */,
+				848D471625931F7700E03DE2 /* ZHThreadTest.swift in Sources */,
 				845F965924C16FB400987D4E /* ViewController.swift in Sources */,
-				8415E96B2583374A00B4396D /* ZHMutableArrayTest.m in Sources */,
-				845F966924C16FFA00987D4E /* ThreadTest.swift in Sources */,
+				843CBC7A259321E400E52899 /* ZHMutableArrayTest.m in Sources */,
 				845F965524C16FB400987D4E /* AppDelegate.swift in Sources */,
+				843CBC76259320FF00E52899 /* ZHSortTest.m in Sources */,
+				848D47032593152400E03DE2 /* ZHLockTest.swift in Sources */,
+				848D471B2593201B00E03DE2 /* ZHObjcRuntimeTest.m in Sources */,
 				845F965724C16FB400987D4E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = $TARGET_NAME/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -327,7 +337,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhihan.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$TARGET_NAME/test-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS65L357P2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = $TARGET_NAME/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,7 +360,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhihan.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "test/test-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$TARGET_NAME/test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
