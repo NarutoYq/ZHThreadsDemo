@@ -10,20 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK: - property
+    private var testView:ZHTestView {
+        if let view = _testView { return view }
+        let view = ZHTestView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        view.backgroundColor = .yellow
+        view.center = self.view.center
+        self.view.addSubview(view)
+        _testView = view
+        return view
+    }
+    private var _testView:ZHTestView?
+    
     private lazy var test:ZHThreadTest = ZHThreadTest()
     private lazy var runtimeTest:ZHObjcRuntimeTest = ZHObjcRuntimeTest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    static var timer:Timer?
+    
     @IBAction func lockPerformanceAction(_ sender: Any) {
+//        let lockTest = ZHLockTest()
+//        lockTest.testPerformance()
+        
+//        let threadTest = ZHThreadTest()
+//        threadTest.run()
+        
 //        runtimeTest.test()
 //        ZHMutableArrayTest.testCircle()
 //        sortTest()
-        let lockTest = ZHLockTest()
-        lockTest.testPerformance()
+        NSLog("abcd")
+        self.testView.setNeedsDisplay()
+//        self.testView.layoutIfNeeded()
     }
 
 }

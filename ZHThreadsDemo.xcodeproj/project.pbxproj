@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84145863259C738000403F5B /* ZHTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84145862259C738000403F5B /* ZHTestView.swift */; };
+		842E708625A6A6B200EEBA93 /* BCCatonMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E708525A6A6B200EEBA93 /* BCCatonMonitor.swift */; };
 		843CBC76259320FF00E52899 /* ZHSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBC75259320FF00E52899 /* ZHSortTest.m */; };
 		843CBC7A259321E400E52899 /* ZHMutableArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CBC79259321E400E52899 /* ZHMutableArrayTest.m */; };
 		845F965524C16FB400987D4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F965424C16FB400987D4E /* AppDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84145862259C738000403F5B /* ZHTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHTestView.swift; sourceTree = "<group>"; };
+		842E708525A6A6B200EEBA93 /* BCCatonMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCCatonMonitor.swift; sourceTree = "<group>"; };
 		843CBC74259320FF00E52899 /* ZHSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSortTest.h; sourceTree = "<group>"; };
 		843CBC75259320FF00E52899 /* ZHSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSortTest.m; sourceTree = "<group>"; };
 		843CBC78259321E400E52899 /* ZHMutableArrayTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHMutableArrayTest.h; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				848D471A2593201B00E03DE2 /* ZHObjcRuntimeTest.m */,
 				843CBC78259321E400E52899 /* ZHMutableArrayTest.h */,
 				843CBC79259321E400E52899 /* ZHMutableArrayTest.m */,
+				84145862259C738000403F5B /* ZHTestView.swift */,
+				842E708525A6A6B200EEBA93 /* BCCatonMonitor.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -175,9 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				848D471625931F7700E03DE2 /* ZHThreadTest.swift in Sources */,
+				842E708625A6A6B200EEBA93 /* BCCatonMonitor.swift in Sources */,
 				845F965924C16FB400987D4E /* ViewController.swift in Sources */,
 				843CBC7A259321E400E52899 /* ZHMutableArrayTest.m in Sources */,
 				845F965524C16FB400987D4E /* AppDelegate.swift in Sources */,
+				84145863259C738000403F5B /* ZHTestView.swift in Sources */,
 				843CBC76259320FF00E52899 /* ZHSortTest.m in Sources */,
 				848D47032593152400E03DE2 /* ZHLockTest.swift in Sources */,
 				848D471B2593201B00E03DE2 /* ZHObjcRuntimeTest.m in Sources */,

@@ -149,6 +149,75 @@ void heapSort(int* array, int length) {
     }
 }
 
+//MARK: - 归并排序
+/// 归并排序
+void mergeSort(int *array, int length) {
+    int *newArray = mergeSortRecursive(array, length, 0, length-1);
+    for (int i=0; i<length; i++) {
+        printf("%d,",newArray[i]);
+    }
+    printf("\r\n");
+    free(newArray);
+}
+/// 递归执行划分、合并操作
+int* mergeSortRecursive(int *array, int length, int left, int right) {
+    int *newArray = (int *)malloc((right-left+1)*sizeof(int));
+    memset(newArray, 0, sizeof(int)*(right-left+1));
+    if (left >= right) {
+        newArray[0] = array[left];
+        return newArray;
+    }
+    int leftEnd = left+(right-left)/2;
+    int rightStart = leftEnd+1;
+    // 划分左右区间
+    int *leftArray = mergeSortRecursive(array, length, left, leftEnd);
+    int *rightArray = mergeSortRecursive(array, length, rightStart, right);
+    // 合并左右区间
+    mergeHandle(newArray, leftArray, leftEnd-left+1, rightArray, right-rightStart+1);
+    free(leftArray);
+    free(rightArray);
+    return newArray;
+}
+/// 合并左右两侧区域
+void mergeHandle(int *newArray, int *leftArray, int leftLength, int *rightArray, int rightLength) {
+    int leftIndex = 0;
+    int rightIndex = 0;
+    int index = 0;
+    while (true) {
+        // 双指针，对比左右区域
+        int leftItem = leftArray[leftIndex];
+        int rightItem = rightArray[rightIndex];
+        if (leftItem <= rightItem) {
+            // left <= right
+            newArray[index] = leftItem;
+            index++;
+            leftIndex++;
+        }
+        else {
+            // right < left
+            newArray[index] = rightItem;
+            index++;
+            rightIndex++;
+        }
+        // 左侧区域或右侧区域已经遍历完
+        if (leftIndex >= leftLength || rightIndex >= rightLength) break;
+    }
+    // 左侧区域有剩余元素
+    if (leftIndex<leftLength) {
+        for (int i=leftIndex; i<leftLength; i++) {
+            newArray[index] = leftArray[i];
+            index++;
+        }
+    }
+    // 右侧区域有剩余元素
+    if (rightIndex<rightLength) {
+        for (int i=rightIndex; i<rightLength; i++) {
+            newArray[index] = rightArray[i];
+            index++;
+        }
+    }
+}
+
 //MARK: - top k
 /// 分治法分割两数组，返回基准值 pivot index
 int partion(int* array, int length, int left, int right) {
@@ -204,27 +273,33 @@ int topK(int* array, int length, int top) {
 }
 
 
+
 //MARK: - test
 /// 排序测试
 void sortTest() {
     int a[10] = {8,8,6,1,4,6,7,12,22,5};
+//    int a[10] = {8,8,6,1};
 //    quickSort(a, 10, 0, 10-1);
 //    countSort(a, 10);
 //    heapSort(a, 10);
-    printf("\r\n");
+    
 //    for (int i=0; i<10; i++) {
 //        printf("%d,",a[i]);
 //    }
-    printf("%d\r\n", topK(a, 10, 1));
-    printf("%d\r\n", topK(a, 10, 2));
-    printf("%d\r\n", topK(a, 10, 3));
-    printf("%d\r\n", topK(a, 10, 4));
-    printf("%d\r\n", topK(a, 10, 5));
-    printf("%d\r\n", topK(a, 10, 6));
-    printf("%d\r\n", topK(a, 10, 7));
-    printf("%d\r\n", topK(a, 10, 8));
-    printf("%d\r\n", topK(a, 10, 9));
-    printf("%d\r\n", topK(a, 10, 10));
+//    printf("\r\n");
+    
+    mergeSort(a, 10);
+    
+//    printf("%d\r\n", topK(a, 10, 1));
+//    printf("%d\r\n", topK(a, 10, 2));
+//    printf("%d\r\n", topK(a, 10, 3));
+//    printf("%d\r\n", topK(a, 10, 4));
+//    printf("%d\r\n", topK(a, 10, 5));
+//    printf("%d\r\n", topK(a, 10, 6));
+//    printf("%d\r\n", topK(a, 10, 7));
+//    printf("%d\r\n", topK(a, 10, 8));
+//    printf("%d\r\n", topK(a, 10, 9));
+//    printf("%d\r\n", topK(a, 10, 10));
     
 }
 @end

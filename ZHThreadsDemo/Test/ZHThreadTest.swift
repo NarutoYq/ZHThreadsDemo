@@ -62,14 +62,14 @@ public class ZHThreadTest {
 //     }
         
         //MARK: - concurrent
-//    public func run() {
-////        for i in 1...1000 {
-////            DispatchQueue.global(qos: .default).async {
-////                sleep(2)
-////                NSLog(Thread.current);
-////            }
-////            NSLog(i);
-////        }
+    public func run() {
+        let queue = DispatchQueue.global(qos: .default)
+        for i in 1...1000 {
+            queue.async {
+                sleep(2)
+                NSLog("%d:", i, Thread.current.description)
+            }
+        }
 //        NSLog("0")
 //        DispatchQueue.global(qos: .default).async {
 //            NSLog("001")
@@ -99,7 +99,7 @@ public class ZHThreadTest {
 ////        DispatchQueue.global(qos: .default).async {
 ////            NSLog("3 "+Thread.current.description)
 ////        }
-//}
+}
         
         //MARK: - dispatch_async_apply
 //    public func run() {
